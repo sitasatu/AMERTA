@@ -31,7 +31,28 @@ __copyright__ = '(C) 2025 by Sitarani Safitri, Orbita Roswintiarti, Okta Fajar S
 __revision__ = '$Format:%H$'
 
 from qgis.core import QgsProcessingProvider
-from .preprocess_algs.twi_algorithm import TWIAlgorithm
+import os
+import inspect
+from qgis.PyQt.QtGui import QIcon
+
+# RainPCA
+from .rainpca_algs.chirpsmean_algorithm import ChirpsMeanAlgorithm
+from .rainpca_algs.chirpsannual_algorithm import ChirpsAnnualSumAlgorithm
+from .rainpca_algs.chirpspca_algorithm import ChirpsPCAAlgorithm
+# from .rainpca_algs.chirpsnorm_algorithm import NormalizeMinMaxAlgorithm
+
+# Preprocessing
+from .preprocess_algs.standarisasipl_algorithm import StandardLCClass
+from .preprocess_algs.standarisasijt_algorithm import StandardSoilClass
+
+# MCDA Factors for Small Reservoirs
+from .preanalysis_algs.griddingtwi_algorithm import GridTwiAlgorithm
+from .preanalysis_algs.griddingch_algorithm import GridRainAlgorithm
+from .preanalysis_algs.griddingpl_algorithm import GridPLAlgorithm
+from .preanalysis_algs.griddingjt_algorithm import GridJTAlgorithm
+
+# Analisis Potensi Lokasi Embung dengan MCDA
+from .analysis_algs.amerta_algorithm import AMERTA_MCDAGridAlgorithm
 
 
 class AMERTAProvider(QgsProcessingProvider):
@@ -53,7 +74,24 @@ class AMERTAProvider(QgsProcessingProvider):
         """
         Loads all algorithms belonging to this provider.
         """
-        self.addAlgorithm(TWIAlgorithm())
+        # RainPCA
+        self.addAlgorithm(ChirpsMeanAlgorithm())
+        self.addAlgorithm(ChirpsAnnualSumAlgorithm())
+        self.addAlgorithm(ChirpsPCAAlgorithm())
+        # self.addAlgorithm(NormalizeMinMaxAlgorithm())
+        
+        # Preprocessing
+        self.addAlgorithm(StandardLCClass())
+        self.addAlgorithm(StandardSoilClass())
+        
+        # MCDA Factors for Small Reservoirs
+        self.addAlgorithm(GridTwiAlgorithm())
+        self.addAlgorithm(GridRainAlgorithm())
+        self.addAlgorithm(GridPLAlgorithm())
+        self.addAlgorithm(GridJTAlgorithm())
+        
+        # MCDA Embung
+        self.addAlgorithm(AMERTA_MCDAGridAlgorithm())
         # add additional algorithms here
         # self.addAlgorithm(MyOtherAlgorithm())
 
@@ -72,14 +110,16 @@ class AMERTAProvider(QgsProcessingProvider):
 
         This string should be short (e.g. "Lastools") and localised.
         """
-        return self.tr('amerta_provider')
+        return self.tr('AMERTA')
 
     def icon(self):
-        """
-        Should return a QIcon which is used for your provider inside
-        the Processing toolbox.
-        """
-        return QgsProcessingProvider.icon(self)
+        icon_path = os.path.join(os.path.dirname(__file__), 'icon.png')
+        print(f"[AMERTAProvider] Loading icon from: {icon_path}")  # Debug print
+        if os.path.exists(icon_path):
+            return QIcon(icon_path)
+        else:
+            print("[AMERTAProvider] Icon not found!")
+            return super().icon()
 
     def longName(self):
         """
