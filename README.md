@@ -27,3 +27,30 @@ git clone https://github.com/sitasatu/AMERTA.git
 # Linux:   ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/
 # macOS:   ~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/
 # Restart QGIS, then enable the plugin (Plugins → Manage and Install…)
+```
+
+## Quickstart
+1. Enable the plugin (Plugins → Manage and Install… → search “AMERTA”). 
+2. Open Processing Toolbox → AMERTA group.
+
+## Typical flow
+1. Prepare rainfall: CHIRPS – Annual (Sum/Mean) / PCA Variability.
+2. Build grids & factors: Grid Rainfall, Grid TWI, Grid Soil Type (JTNH), Grid Land Cover (PL).
+3. Combine factors with MCDA → overall suitability (e.g., S_Total).
+
+Output: a grid layer with factor fields and suitability class for retention ponds siting.
+
+## Reporting Issues / Contributing
+- Open an Issue with QGIS version, OS, steps to reproduce, and logs/screenshots.
+- PRs welcome—keep folder structure consistent and, when possible, include tiny test data.
+
+## Citation
+If you use AMERTA in publications, please cite:
+<p>AMERTA: A QGIS plugin for MCDA-based retention ponds siting (Version 1.0.1).
+Badan Riset dan Inovasi Nasional, 2025. https://github.com/sitasatu/AMERTA</p>
+
+## License & Credits
+Released under GNU GPL-2.0 or later. See LICENSE.
+<p>Authors: Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana (see metadata.txt).</p>
+
+Acknowledgments: CHIRPS rainfall, DEM sources, and collaborators.
