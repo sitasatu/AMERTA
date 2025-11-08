@@ -30,13 +30,17 @@ git clone https://github.com/sitasatu/AMERTA.git
 ```
 
 ## Quickstart
-1. Enable the plugin (Plugins → Manage and Install… → search “AMERTA”). 
-2. Open Processing Toolbox → AMERTA group.
+1. Enable the plugin (Plugins → Manage and Install… → search “**AMERTA**”). 
+2. Open Processing Toolbox → **AMERTA** group.
 
 ## Typical flow
-1. Prepare rainfall: CHIRPS – Annual (Sum/Mean) / PCA Variability.
-2. Build grids & factors: Grid Rainfall, Grid TWI, Grid Soil Type (JTNH), Grid Land Cover (PL).
-3. Combine factors with MCDA → overall suitability (e.g., S_Total).
+Inputs: AOI polygon; rasters (CHIRPS annual rainfall mm/yr, PCA eigenvector PC1, TWI); vectors (standardized JTNH & PL).
+
+1. Prepare rainfall: CHIRPS – Annual (Sum) / PCA Variability.
+2. Prepare topographic wetness index (TWI)
+3. Map source fields to standardized Land Cover and Soil Type classes.
+4. Build grids & factors: Grid Rainfall, Grid TWI, Grid Soil Type (JTNH), Grid Land Cover (PL).
+5. Combine factors with MCDA → overall suitability (e.g., MCDA).
 
 Output: a grid layer with factor fields and suitability class for retention ponds siting.
 
@@ -51,6 +55,6 @@ Badan Riset dan Inovasi Nasional, 2025. https://github.com/sitasatu/AMERTA</p>
 
 ## License & Credits
 Released under GNU GPL-2.0 or later. See LICENSE.
-<p>Authors: Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana (see metadata.txt).</p>
+<p><strong>Authors</strong>: Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana (see metadata.txt).</p>
 
-Acknowledgments: CHIRPS rainfall, DEM sources, and collaborators.
+<p><strong>Acknowledgments</strong>: CHIRPS rainfall, DEM sources, and collaborators.
