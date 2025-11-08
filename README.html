@@ -1,171 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AMERTA — QGIS Plugin for MCDA-based Retention Ponds Siting</title>
-<style>
-  :root { --fg:#0f172a; --muted:#475569; --bg:#ffffff; --card:#f8fafc; --accent:#2563eb; }
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans"; color:var(--fg); background:var(--bg); margin:0; line-height:1.6 }
-  header { padding:48px 24px 16px; border-bottom:1px solid #e2e8f0; background:linear-gradient(180deg,#ffffff,#f8fafc) }
-  main { max-width:980px; margin:0 auto; padding:24px }
-  h1 { font-size:2rem; margin:0 0 8px }
-  h2 { margin-top:2.2rem }
-  h3 { margin-top:1.6rem }
-  p, li { color:var(--muted) }
-  code, pre { background:#0f172a0d; padding:.2em .35em; border-radius:6px }
-  pre { padding:12px; overflow:auto }
-  .pill { display:inline-block; font-size:.85rem; background:var(--card); border:1px solid #e2e8f0; padding:4px 10px; border-radius:999px; margin-right:6px }
-  .grid { display:grid; gap:12px }
-  .grid.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-  .card { background:var(--card); border:1px solid #e2e8f0; border-radius:12px; padding:14px 16px }
-  a { color:var(--accent); text-decoration:none }
-  a:hover { text-decoration:underline }
-  footer { margin-top:48px; padding:24px; border-top:1px solid #e2e8f0; color:var(--muted) }
-</style>
-</head>
-<body>
+# AMERTA — MCDA for Retention Ponds Site Suitability (QGIS Plugin)
 
-<header>
-  <h1>AMERTA — MCDA for Retention Ponds Site Suitability</h1>
-  <p>A QGIS plugin to identify and prioritize potential retention ponds locations using Multi-Criteria Decision Analysis (MCDA).</p>
-  <div>
-    <span class="pill">QGIS ≥ 3.40 (LTR OK)</span>
-    <span class="pill">License: GPL-2.0+</span>
-    <span class="pill">Windows / Linux / macOS</span>
-  </div>
-</header>
+A QGIS plugin to identify and prioritize potential **retention ponds** locations using **Multi-Criteria Decision Analysis (MCDA)**.
 
-<main>
-  <h2 id="table-of-contents">Table of contents</h2>
-  <ol>
-    <li><a href="#features">Key features</a></li>
-    <li><a href="#compat">Compatibility</a></li>
-    <li><a href="#install">Installation</a></li>
-    <li><a href="#quickstart">Quickstart</a></li>
-    <li><a href="#modules">Modules overview</a></li>
-    <li><a href="#io">Inputs &amp; outputs</a></li>
-    <li><a href="#samples">Sample data</a></li>
-    <li><a href="#issues">Reporting issues &amp; contributing</a></li>
-    <li><a href="#cite">Citation</a></li>
-    <li><a href="#license">License &amp; credits</a></li>
-  </ol>
+<p>
+  <strong>QGIS:</strong> ≥ 3.40 (LTR OK) •
+  <strong>OS:</strong> Windows / Linux / macOS •
+  <strong>License:</strong> GPL-2.0+
+</p>
 
-  <h2 id="features">Key features</h2>
-  <div class="grid two">
-    <div class="card">
-      <h3>Rainfall analytics (CHIRPS)</h3>
-      <p>Prepare annual rainfall (sum/mean) and variability via PCA (eigenvector) for MCDA scoring.</p>
-    </div>
-    <div class="card">
-      <h3>Gridded factors</h3>
-      <p>Create analysis grids and populate per-cell factors: rainfall, TWI, soil type (JTNH), and land cover (PL).</p>
-    </div>
-    <div class="card">
-      <h3>MCDA scoring &amp; combine</h3>
-      <p>Compute factor scores (e.g., <code>S_Rain</code>, <code>S_TWI</code>, <code>S_PL</code>, <code>S_JTNH</code>) and aggregate to suitability.</p>
-    </div>
-    <div class="card">
-      <h3>Utilities</h3>
-      <p>Standardize classes, clip to AOI, and generate clean, reproducible outputs with key fields.</p>
-    </div>
-  </div>
+## Features
+- **Rainfall analytics (CHIRPS):** annual sum/mean and PCA-based variability (eigenvector).
+- **Gridded factors:** per-cell rainfall, TWI, Soil Type (JTNH), Land Cover (PL).
+- **MCDA scoring & combine:** computes `S_Rain`, `S_TWI`, `S_PL`, `S_JTNH`, and overall suitability.
+- **Utilities:** class standardization, AOI clipping, reproducible outputs.
 
-  <h2 id="compat">Compatibility</h2>
-  <ul>
-    <li><strong>QGIS:</strong> 3.40+ (LTR supported)</li>
-    <li><strong>OS:</strong> Windows, Linux, macOS (tested on recent versions)</li>
-    <li><strong>Dependencies:</strong> Uses standard QGIS/Processing; no external Python packages required for core modules.</li>
-  </ul>
+## Installation
+**A) From release ZIP (recommended)**
+1. Download the latest `.zip` from **Releases**.  
+2. QGIS → *Plugins* → *Manage and Install…* → *Install from ZIP* → choose the file.
 
-  <h2 id="install">Installation</h2>
-  <h3>Option A — From a release ZIP (recommended)</h3>
-  <ol>
-    <li>Download the latest <code>.zip</code> from the repository’s <em>Releases</em> page.</li>
-    <li>In QGIS: <em>Plugins</em> → <em>Manage and Install…</em> → <em>Install from ZIP</em> → select the file → <em>Install</em>.</li>
-  </ol>
-
-  <h3>Option B — From source</h3>
-  <pre><code>git clone https://github.com/sitasatu/AMERTA.git
+**B) From source**
+```bash
+git clone https://github.com/sitasatu/AMERTA.git
 # Copy the 'AMERTA' folder into your QGIS plugins directory:
-#  • Windows: %AppData%\QGIS\QGIS3\profiles\default\python\plugins\
-#  • Linux:   ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/
-#  • macOS:   ~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/
-# Restart QGIS and enable the plugin via Plugins → Manage and Install…</code></pre>
-
-  <h2 id="quickstart">Quickstart</h2>
-  <ol>
-    <li>Enable the plugin: <em>Plugins</em> → <em>Manage and Install…</em> → search “AMERTA”.</li>
-    <li>Open <em>Processing Toolbox</em> → group <strong>AMERTA</strong>.</li>
-    <li>Typical flow:
-      <ol>
-        <li>Prepare rainfall layers: <em>CHIRPS – Annual (Sum/Mean) / PCA Variability</em>.</li>
-        <li>Build grids &amp; factors: <em>Grid Rainfall</em>, <em>Grid TWI</em>, <em>Grid Soil Type (JTNH)</em>, <em>Grid Land Cover (PL)</em>.</li>
-        <li>Combine factors with MCDA to get overall suitability (e.g., <code>S_Total</code>).</li>
-      </ol>
-    </li>
-    <li>Result: a grid layer with factor fields and a suitability class for retention ponds siting.</li>
-  </ol>
-
-  <h2 id="modules">Modules overview</h2>
-  <ul>
-    <li><strong>CHIRPS – Annual Rainfall (Sum / Mean / PCA Variability)</strong>: prepares rainfall magnitude and variability drivers.</li>
-    <li><strong>Grid Rainfall</strong>: adds <code>mrain</code>, <code>eigen</code>, scores (<code>sa</code>, <code>sv</code>), and <code>S_Rain</code>.</li>
-    <li><strong>Grid TWI</strong>: classifies TWI and computes <code>S_TWI</code>.</li>
-    <li><strong>Grid Soil Type (JTNH)</strong>: assigns dominant soil type per cell and <code>S_JTNH</code>.</li>
-    <li><strong>Grid Land Cover (PL)</strong>: assigns dominant land cover per cell and <code>S_PL</code>.</li>
-    <li><strong>MCDA Combine</strong>: weights/aggregates factor scores into <code>S_Total</code> and suitability classes.</li>
-  </ul>
-
-  <h2 id="io">Inputs &amp; outputs</h2>
-  <div class="grid two">
-    <div class="card">
-      <h3>Inputs</h3>
-      <ul>
-        <li>AOI polygon (administrative boundary, watershed, etc.).</li>
-        <li>Raster layers: CHIRPS rainfall (mm/yr), PCA eigenvector (PC1), TWI.</li>
-        <li>Vector layers: standardized Soil Type (JTNH), standardized Land Cover (PL).</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Outputs (typical fields)</h3>
-      <ul>
-        <li><strong>Rainfall:</strong> <code>mrain</code>, <code>eigen</code>, <code>sa</code>, <code>sv</code>, <code>S_Rain</code></li>
-        <li><strong>TWI:</strong> <code>TWI_class</code>, <code>S_TWI</code></li>
-        <li><strong>Soil:</strong> <code>JTNH</code>, <code>S_JTNH</code></li>
-        <li><strong>Land Cover:</strong> <code>PL</code>, <code>S_PL</code></li>
-        <li><strong>MCDA:</strong> <code>S_Total</code> (0–100) + suitability class</li>
-      </ul>
-    </div>
-  </div>
-
-  <h2 id="samples">Sample data</h2>
-  <p>If you include a small AOI and minimal rasters/vectors in <code>samples/</code>, link them here so users can reproduce the Quickstart quickly.</p>
-
-  <h2 id="issues">Reporting issues &amp; contributing</h2>
-  <ul>
-    <li>Please open an Issue with: QGIS version, OS, steps to reproduce, screenshots/logs.</li>
-    <li>Pull Requests are welcome. Follow the existing folder structure and include small test data where useful.</li>
-  </ul>
-
-  <h2 id="cite">Citation</h2>
-  <p>If you use AMERTA in a publication, please cite:</p>
-  <pre><code>AMERTA: A QGIS plugin for MCDA-based retention ponds siting (Version x.y.z).
-Yayasan Lokahita &amp; collaborators, 2025. https://github.com/sitasatu/AMERTA</code></pre>
-  <p>(Optional: add a <code>CITATION.cff</code> to enable “Cite this repository” on GitHub.)</p>
-
-  <h2 id="license">License &amp; credits</h2>
-  <p>AMERTA is released under the <strong>GNU GPL-2.0 or later</strong>. See <code>LICENSE</code>.</p>
-  <p>Authors: Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana (see <code>metadata.txt</code>).</p>
-  <p>Acknowledgments: CHIRPS rainfall data, DEM sources, and collaborators across institutions.</p>
-
-  <hr />
-  <p><em>Tip:</em> Keep technical details of each module inside the QGIS tool’s Help; keep this README focused on install &amp; usage.</p>
-</main>
-
-<footer>
-  <small>&copy; 2025 AMERTA contributors — GPL-2.0+.</small>
-</footer>
-
-</body>
-</html>
+# Windows: %AppData%\QGIS\QGIS3\profiles\default\python\plugins\
+# Linux:   ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/
+# macOS:   ~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/
+# Restart QGIS, then enable the plugin (Plugins → Manage and Install…)
