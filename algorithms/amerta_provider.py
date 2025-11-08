@@ -39,7 +39,6 @@ from qgis.PyQt.QtGui import QIcon
 from .rainpca_algs.chirpsmean_algorithm import ChirpsMeanAlgorithm
 from .rainpca_algs.chirpsannual_algorithm import ChirpsAnnualSumAlgorithm
 from .rainpca_algs.chirpspca_algorithm import ChirpsPCAAlgorithm
-# from .rainpca_algs.chirpsnorm_algorithm import NormalizeMinMaxAlgorithm
 
 # Preprocessing
 from .preprocess_algs.standarisasipl_algorithm import StandardLCClass
@@ -78,7 +77,6 @@ class AMERTAProvider(QgsProcessingProvider):
         self.addAlgorithm(ChirpsMeanAlgorithm())
         self.addAlgorithm(ChirpsAnnualSumAlgorithm())
         self.addAlgorithm(ChirpsPCAAlgorithm())
-        # self.addAlgorithm(NormalizeMinMaxAlgorithm())
         
         # Preprocessing
         self.addAlgorithm(StandardLCClass())
@@ -90,7 +88,7 @@ class AMERTAProvider(QgsProcessingProvider):
         self.addAlgorithm(GridPLAlgorithm())
         self.addAlgorithm(GridJTAlgorithm())
         
-        # MCDA Embung
+        # MCDA Retention Ponds
         self.addAlgorithm(AMERTA_MCDAGridAlgorithm())
         # add additional algorithms here
         # self.addAlgorithm(MyOtherAlgorithm())
