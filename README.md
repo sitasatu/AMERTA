@@ -54,7 +54,7 @@ If you use AMERTA in publications, please cite:
 Badan Riset dan Inovasi Nasional, 2025. https://github.com/sitasatu/AMERTA</p>
 
 ## License & Credits
-Released under GNU GPL-2.0 or later. See LICENSE.
+Released under GNU GPL-3.0 or later. See LICENSE.
 <p><strong>Authors</strong>: Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana (see metadata.txt).</p>
 
 <p><strong>Acknowledgments</strong>: CHIRPS rainfall, DEM sources, and collaborators.
