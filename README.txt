@@ -1,10 +1,10 @@
 Plugin Builder Results
 
 Your plugin AMERTA was created in:
-    D:/Software/00_QGISPlugins\amerta
+    D:/amerta
 
 Your QGIS plugin directory is located at:
-    C:/Users/sitar/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins
+    C:/Users/sita/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins
 
 What's Next:
 
