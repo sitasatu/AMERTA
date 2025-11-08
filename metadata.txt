@@ -5,13 +5,13 @@
 [general]
 name=AMERTA
 qgisMinimumVersion=3.40
-description=Analisis Multi-kriteria Embung dan Rencana Tata Air
+description=Analisis Multi-kriteria Embung dan Rencana Tata Air - MCDA for retention ponds site suitability
 version=1.0.1
 author=Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana
 email=sitaranisafitri@gmail.com
+license=GPL-3.0+
 
-about=AMERTA (Analisis Multi-kriteria Embung untuk Rencana Tata Air) is a QGIS plugin designed to identify suitable locations for small reservoirs (embung) using Multi-Criteria Decision Analysis (MCDA). It integrates rainfall variability, topographic wetness index (TWI), land cover, and soil type data to generate suitability maps. The plugin supports planners and decision-makers in prioritizing reservoir sites for sustainable water resource management.
-
+about=AMERTA is a QGIS plugin to identify and prioritize retention ponds locations using Multi-Criteria Decision Analysis (MCDA). It integrates CHIRPS rainfall variability (PCA), Topographic Wetness Index (TWI), standardized Land Cover (PL), and Soil Type (JTNH) to produce suitability maps.
 tracker=https://github.com/sitasatu/AMERTA/issues
 repository=https://github.com/sitasatu/AMERTA
 # End of mandatory metadata
@@ -20,10 +20,10 @@ repository=https://github.com/sitasatu/AMERTA
 
 hasProcessingProvider=yes
 # Uncomment the following line and add your changelog:
-# changelog=
+changelog=1.0.1: Set QGIS >= 3.40; switch wording to retention ponds; move icon to plugin root; mark non-experimental; update README/metadata.
 
 # Tags are comma separated with spaces allowed
-tags=python
+tags=mcda, hydrology, retention ponds, rainfall, chirps, principal component analysis, pca, eigenvector, twi, soil, land cover, processing, indonesia
 
 homepage=https://github.com/sitasatu/AMERTA
 category=Analysis
@@ -44,4 +44,3 @@ Category of the plugin: Raster, Vector, Database or Web
 
 # If the plugin can run on QGIS Server.
 server=False
-
