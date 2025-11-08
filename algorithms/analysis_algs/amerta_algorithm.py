@@ -24,7 +24,7 @@
 
 __author__ = 'Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana'
 __date__ = '2025-09-18'
-__copyright__ = '(C) 2025 by Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana'
+__copyright__ = '(C) 2025 by Badan Riset dan Inovasi Nasional'
 
 # This will get replaced with a git SHA1 when you do a git archive
 
@@ -260,8 +260,8 @@ class AMERTA_MCDAGridAlgorithm(QgsProcessingAlgorithm):
 
     # Metadata
     def name(self): return 'mcdagrid_rain_twi_pl_jtnh'
-    def displayName(self): return self.tr('Retention Ponds Site Suitability Analysis')
-    def groupId(self): return 'D. MCDA Analysis Results'
+    def displayName(self): return self.tr('Retention Ponds Site Suitability Model')
+    def groupId(self): return 'D. MCDA Analysis Result'
     def group(self): return self.tr(self.groupId())
     def createInstance(self): return AMERTA_MCDAGridAlgorithm()
     def icon(self):

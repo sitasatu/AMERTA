@@ -24,7 +24,7 @@
 
 __author__ = 'Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana'
 __date__ = '2025-09-18'
-__copyright__ = '(C) 2025 by Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana'
+__copyright__ = '(C) 2025 by Badan Riset dan Inovasi Nasional'
 
 # This will get replaced with a git SHA1 when you do a git archive
 
@@ -411,6 +411,7 @@ CASE
   WHEN "JTNH" IN ('Aluvial','Aluvial (Fluvisol)','Fluvisol') THEN 2
   WHEN "JTNH" = 'Andosol' THEN 1
   WHEN "JTNH" = 'Regosol' THEN 2
+  WHEN "JTNH" = 'Oksisol (Oxisol)' THEN 3
   WHEN "JTNH" IN ('Litosol','Litosol (Leptosol)','Leptosol') THEN 2
   WHEN "JTNH" IN ('Planosol Hidromorf','Planosol Hidromorf (Planosol)','Planosol') THEN 5
   WHEN "JTNH" IN ('Grumosol','Grumosol (Vertisol)','Vertisol') THEN 4

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 """
 /***************************************************************************
@@ -24,7 +25,7 @@
 
 __author__ = 'Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana'
 __date__ = '2025-09-18'
-__copyright__ = '(C) 2025 by Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana'
+__copyright__ = '(C) 2025 by Badan Riset dan Inovasi Nasional'
 
 # This will get replaced with a git SHA1 when you do a git archive
 
