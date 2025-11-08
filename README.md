@@ -5,7 +5,7 @@ A QGIS plugin to identify and prioritize potential **retention ponds** locations
 <p>
   <strong>QGIS:</strong> ≥ 3.40 (LTR OK) •
   <strong>OS:</strong> Windows / Linux / macOS •
-  <strong>License:</strong> GPL-2.0+
+  <strong>License:</strong> GPL-3.0+
 </p>
 
 ## Features

@@ -4,9 +4,9 @@
 
 [general]
 name=AMERTA
-qgisMinimumVersion=3.0
+qgisMinimumVersion=3.40
 description=Analisis Multi-kriteria Embung dan Rencana Tata Air
-version=1.0
+version=1.0.1
 author=Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana
 email=sitaranisafitri@gmail.com
 
@@ -29,7 +29,7 @@ homepage=https://github.com/sitasatu/AMERTA
 category=Analysis
 icon=icon.png
 # experimental flag
-experimental=True
+experimental=False
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False

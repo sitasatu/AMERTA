@@ -5,7 +5,7 @@
 #							 -------------------
 #		begin				: 2025-09-18
 #		git sha				: $Format:%H$
-#		copyright			: (C) 2025 by Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana
+#		copyright			: (C) 2025 by Badan Riset dan Inovasi Nasional
 #		email				: sitaranisafitri@gmail.com
 # ***************************************************************************/
 #
