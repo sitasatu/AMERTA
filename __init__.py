@@ -24,7 +24,7 @@
 
 __author__ = 'Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana'
 __date__ = '2025-09-18'
-__copyright__ = '(C) 2025 by Badan Riset dan Inovasi Nasional
+__copyright__ = '(C) 2025 by Badan Riset dan Inovasi Nasional'
 
 
 # noinspection PyPep8Naming
