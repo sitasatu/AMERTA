@@ -9,8 +9,8 @@ A QGIS plugin to identify and prioritize potential **retention ponds** locations
 </p>
 
 ## Features
-- **Rainfall analytics (CHIRPS):** annual sum/mean and PCA-based variability (eigenvector).
-- **Gridded factors:** per-cell rainfall, TWI, Soil Type (JTNH), Land Cover (PL).
+- **Rainfall analytics (CHIRPS):** annual rainfall, mean rainfall, and PCA-based variability (eigenvector).
+- **Gridded factors:** per-grid rainfall, TWI, Soil Type (JTNH), Land Cover (PL).
 - **MCDA scoring & combine:** computes `S_Rain`, `S_TWI`, `S_PL`, `S_JTNH`, and overall suitability.
 - **Utilities:** class standardization, AOI clipping, reproducible outputs.
 

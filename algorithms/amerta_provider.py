@@ -44,13 +44,13 @@ from .rainpca_algs.chirpspca_algorithm import ChirpsPCAAlgorithm
 from .preprocess_algs.standarisasipl_algorithm import StandardLCClass
 from .preprocess_algs.standarisasijt_algorithm import StandardSoilClass
 
-# MCDA Factors for Small Reservoirs
+# MCDA Factors for Retention Ponds
 from .preanalysis_algs.griddingtwi_algorithm import GridTwiAlgorithm
 from .preanalysis_algs.griddingch_algorithm import GridRainAlgorithm
 from .preanalysis_algs.griddingpl_algorithm import GridPLAlgorithm
 from .preanalysis_algs.griddingjt_algorithm import GridJTAlgorithm
 
-# Analisis Potensi Lokasi Embung dengan MCDA
+# MCDA Retention Ponds
 from .analysis_algs.amerta_algorithm import AMERTA_MCDAGridAlgorithm
 
 
