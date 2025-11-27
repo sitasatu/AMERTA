@@ -158,7 +158,7 @@ Output:
             defaultValue=False))
         # NEW: optional land mask polygon
         self.addParameter(QgsProcessingParameterVectorLayer(
-            self.LAND_MASK, self.tr('Land mask (optional, polygons)'),
+            self.LAND_MASK, self.tr('Land mask (polygons)'),
             types=[QgsProcessing.TypeVectorPolygon],
             optional=True))
         self.addParameter(QgsProcessingParameterVectorDestination(
