@@ -360,17 +360,39 @@ class ChirpsPCAAlgorithm(QgsProcessingAlgorithm):
 
         pc1_final_src = pc1_unclipped
         if do_clip:
-            if not isinstance(aoi_src, QgsFeatureSource) or aoi_src is None:
+            # Hanya untuk cek: AOI tidak boleh kosong
+            aoi_src = self.parameterAsSource(parameters, self.AOI, context)
+            if aoi_src is None:
                 raise QgsProcessingException(self.tr('AOI is required when clipping is enabled.'))
+
+            # Tentukan path file clip
             pc1_clip = os.path.join(os.path.dirname(pc1_unclipped), 'pc1_clip.tif') \
                        if self._is_processing_temp(out_pc1) else out_pc1
+
+            # Penting: kirim nilai parameter mentah, BUKAN aoi_src
             processing.run(
                 'gdal:cliprasterbymasklayer',
-                {'INPUT': pc1_unclipped, 'MASK': aoi_src, 'SOURCE_CRS': None, 'TARGET_CRS': None,
-                 'NODATA': -9999.0, 'ALPHA_BAND': False, 'CROP_TO_CUTLINE': True, 'KEEP_RESOLUTION': True,
-                 'SET_RESOLUTION': False, 'X_RESOLUTION': None, 'Y_RESOLUTION': None, 'MULTITHREADING': True,
-                 'OPTIONS': 'COMPRESS=LZW', 'DATA_TYPE': 0, 'EXTRA': '', 'OUTPUT': pc1_clip},
-                context=context, feedback=feedback, is_child_algorithm=True
+                {
+                    'INPUT': pc1_unclipped,
+                    'MASK': parameters[self.AOI],  # <-- ini kuncinya
+                    'SOURCE_CRS': None,
+                    'TARGET_CRS': None,
+                    'NODATA': -9999.0,
+                    'ALPHA_BAND': False,
+                    'CROP_TO_CUTLINE': True,
+                    'KEEP_RESOLUTION': True,
+                    'SET_RESOLUTION': False,
+                    'X_RESOLUTION': None,
+                    'Y_RESOLUTION': None,
+                    'MULTITHREADING': True,
+                    'OPTIONS': 'COMPRESS=LZW',
+                    'DATA_TYPE': 0,
+                    'EXTRA': '',
+                    'OUTPUT': pc1_clip
+                },
+                context=context,
+                feedback=feedback,
+                is_child_algorithm=True
             )
             pc1_final_src = pc1_clip
 

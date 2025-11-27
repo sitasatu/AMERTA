@@ -6,7 +6,7 @@
 name=AMERTA
 qgisMinimumVersion=3.40
 description=Analisis Multi-kriteria Embung dan Rencana Tata Air - MCDA for retention ponds site suitability
-version=1.0.1
+version=1.1.0
 author=Sitarani Safitri, Orbita Roswintiarti, Okta Fajar Saputra, Galdita Aruba Chulafak, Gatot Nugroho, Wismu Sunarmodo, Kusumaning Ayu Dyah Sukowati, Hana Listi Fitriana
 email=sitaranisafitri@gmail.com
 license=GPL-3.0+
