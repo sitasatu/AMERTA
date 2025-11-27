@@ -50,7 +50,7 @@ Output: a grid layer with factor fields and suitability class for retention pond
 
 ## Citation
 If you use AMERTA in publications, please cite (APA 7th):
-<p>Safitri, S., Roswintiarti, O., Saputra, O. F., Chulafak, G. A., Nugroho, G., Sunarmodo, W., Sukowati, K. A. D., & Fitriana, H. L. (2025). AMERTA: A QGIS plugin for MCDA-based retention ponds siting (v1.0.2) [Computer software]. Badan Riset dan Inovasi Nasional (BRIN). https://github.com/sitasatu/AMERTA</p>
+<p>Safitri, S., Roswintiarti, O., Saputra, O. F., Chulafak, G. A., Nugroho, G., Sunarmodo, W., Sukowati, K. A. D., & Fitriana, H. L. (2025). AMERTA: A QGIS plugin for MCDA-based retention ponds siting (v1.1.0) [Computer software]. Badan Riset dan Inovasi Nasional (BRIN). https://github.com/sitasatu/AMERTA</p>
 
 ## License & Credits
 Released under GNU GPL-3.0 or later. See LICENSE.
